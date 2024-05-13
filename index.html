@@ -29,12 +29,12 @@
                         </p>
                     </div>
                 </div> -->
-                <div class="item" v-for="image in images" v-show="activeImage">
-                    <img :src="image.image">
+                <div class="item" :class="imageActive( i )" v-for="element, i in images" >
+                    <img :src="element.image">
                     <div class="text">
-                        <h3>{{ image.title }}</h3>
+                        <h3>{{ element.title }}</h3>
                         <p>
-                            {{image.text}}
+                            {{element.text}}
                         </p>
                     </div>
                 </div>
@@ -57,6 +57,10 @@
                     <div class="thumb">
                         <img src="img/05.webp" alt="Avengers" />
                     </div> -->
+
+                    <div class="thumb" :class="imageActive( i )" v-for="element, i in images">
+                        <img :src="element.image">
+                    </div>
                 </div>
 
             </div>
