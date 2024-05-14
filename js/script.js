@@ -99,7 +99,10 @@ createApp({
         },
 
         imageOver(indice) {
+            this.stopAutoplay();
+            this.startAutoplay();
             this.slideImage = indice;
+
         }
     },
     

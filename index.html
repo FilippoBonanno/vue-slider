@@ -29,6 +29,7 @@
                         </p>
                     </div>
                 </div> -->
+                <h1 style="color: rgb(0, 190, 0);">Metti il mouse su un immagine per fermare lo scrolling</h1>
                 <div @mouseover="stopAutoplay" @mouseleave="startAutoplay" class="item" :class="imageActive( i )" v-for="element, i in images" >
                     <img :src="element.image">
                     <div class="text">
