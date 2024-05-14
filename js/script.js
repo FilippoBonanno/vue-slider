@@ -55,6 +55,7 @@ createApp({
                 ],
 
                 slideImage: 0,
+                timer: NaN
                 
            
         }
@@ -70,20 +71,43 @@ createApp({
         },
 
         nextImage() {
-            this.slideImage++;
-            console.log(this.slideImage);
-
+            if (this.slideImage >= this.images.length - 1 ) {
+                this.slideImage = 0
+            } else {
+                this.slideImage++;
+            };
+            
         },
 
         prevImage() {
-            this.slideImage--;
-            console.log(this.slideImage);
+            
+            if (this.slideImage <= 0 ) {
+                this.slideImage = this.images.length - 1
+            } else {
+                this.slideImage--;
+            };
 
-        }
+        },
 
-    },
-    mounted() {
+        // toggleImageActive(index) {
+        //     // Verifica se l'immagine è attiva
+        //     if (this.imageActive(index) === 'active') {
+        //         // Se è attiva, rimuovi la classe 'active'
+        //         this.images[index].active = false;
+        //     } else {
+        //         // Se non è attiva, aggiungi la classe 'active'
+        //         this.images[index].active = true;
+        //     }
+        // },
         
+
+        imageOver(indice) {
+            this.slideImage = indice;
+        }
+    },
+    
+    mounted() {
+        this.timer = setInterval(this.nextImage, 1000);
     }
 
 }).mount('#app')

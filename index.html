@@ -58,7 +58,7 @@
                         <img src="img/05.webp" alt="Avengers" />
                     </div> -->
 
-                    <div class="thumb" :class="imageActive( i )" v-for="element, i in images">
+                    <div style="cursor: pointer;" class="thumb" @click="imageOver(i)" :class="imageActive( i )" v-for="element, i in images">
                         <img :src="element.image">
                     </div>
                 </div>
