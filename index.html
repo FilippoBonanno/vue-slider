@@ -29,7 +29,7 @@
                         </p>
                     </div>
                 </div> -->
-                <div class="item" :class="imageActive( i )" v-for="element, i in images" >
+                <div @mouseover="stopAutoplay" @mouseleave="startAutoplay" class="item" :class="imageActive( i )" v-for="element, i in images" >
                     <img :src="element.image">
                     <div class="text">
                         <h3>{{ element.title }}</h3>

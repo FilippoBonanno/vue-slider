@@ -89,17 +89,14 @@ createApp({
 
         },
 
-        // toggleImageActive(index) {
-        //     // Verifica se l'immagine è attiva
-        //     if (this.imageActive(index) === 'active') {
-        //         // Se è attiva, rimuovi la classe 'active'
-        //         this.images[index].active = false;
-        //     } else {
-        //         // Se non è attiva, aggiungi la classe 'active'
-        //         this.images[index].active = true;
-        //     }
-        // },
-        
+        startAutoplay () {
+            this.timer = setInterval(this.nextImage, 1000);
+        },
+
+        stopAutoplay() {
+            clearInterval (this.timer);
+            this.timer = null;
+        },
 
         imageOver(indice) {
             this.slideImage = indice;
